@@ -867,3 +867,7 @@ a:hover { opacity: 0.8; }
 @media (max-width: 480px) {
   .team__grid { grid-template-columns: 1fr; }
 }
+/*
+Generando conflictos jeje
+OJO: Este comentario se debe quedar como parte del repo
+*/
