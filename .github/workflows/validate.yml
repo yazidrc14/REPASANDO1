@@ -1,0 +1,38 @@
+name: Validate HTML & Internal Links
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+
+      - name: Check internal anchor links
+        run: |
+          python3 -c "
+          import re, sys
+
+          with open('index.html') as f:
+              content = f.read()
+
+          hrefs   = re.findall(r'href=\"#([^\"]+)\"', content)
+          ids     = re.findall(r'id=\"([^\"]+)\"', content)
+          missing = [h for h in hrefs if h not in ids]
+
+          if missing:
+              print('ERROR: Los siguientes enlaces del navbar no apuntan a ninguna seccion existente:')
+              for m in missing:
+                  print(f'  href=\"#{m}\" -> no existe id=\"{m}\" en index.html')
+              sys.exit(1)
+          else:
+              print('OK: Todos los enlaces internos apuntan a secciones existentes.')
+          "
