@@ -1,0 +1,168 @@
+/* Navigation Block */
+.nav {
+  background-color: var(--color-dark);
+  box-shadow: 0 2px 10px rgba(30, 27, 75, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Navigation Container */
+.nav__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  position: relative;
+}
+
+/* Navigation Brand */
+.nav__brand {
+  flex-shrink: 0;
+}
+
+.nav__logo {
+  color: var(--color-accent);
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hidden Checkbox for Mobile Menu */
+.nav__checkbox {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Navigation List */
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.nav__item {
+  margin: 0;
+}
+
+.nav__link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  display: block;
+}
+
+.nav__link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* Mobile Toggle Button */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.nav__toggle-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-secondary);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
+}
+
+/* Toggle Line Modifiers */
+.nav__toggle-line--top    { transform: translateY(0); }
+.nav__toggle-line--middle { opacity: 1; }
+.nav__toggle-line--bottom { transform: translateY(0); }
+
+/* Animación al abrir el menú */
+.nav__checkbox:checked + .nav__toggle .nav__toggle-line--top {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__checkbox:checked + .nav__toggle .nav__toggle-line--middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__checkbox:checked + .nav__toggle .nav__toggle-line--bottom {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-dark);
+    flex-direction: column;
+    padding: var(--space-sm) 0;
+    box-shadow: 0 4px 20px rgba(30, 27, 75, 0.3);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .nav__checkbox:checked ~ .nav__list {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__item {
+    width: 100%;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .nav__checkbox:checked ~ .nav__list .nav__item {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav__checkbox:checked ~ .nav__list .nav__item:nth-child(1) { transition-delay: 0.1s; }
+  .nav__checkbox:checked ~ .nav__list .nav__item:nth-child(2) { transition-delay: 0.2s; }
+  .nav__checkbox:checked ~ .nav__list .nav__item:nth-child(3) { transition-delay: 0.3s; }
+
+  .nav__link {
+    display: block;
+    padding: var(--space-sm) var(--space-lg);
+    text-align: center;
+    font-size: var(--font-size-large);
+  }
+
+  .nav__link:hover {
+    background-color: var(--color-primary);
+    transform: translateX(10px);
+  }
+
+  .nav__toggle { display: flex; }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .nav__list { gap: var(--space-md); }
+}
