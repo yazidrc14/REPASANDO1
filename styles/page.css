@@ -1,0 +1,89 @@
+/* CSS Variables - Paleta de colores */
+:root {
+  --color-primary: #7c3aed;      /* Violeta */
+  --color-secondary: #f5f3ff;    /* Lavanda claro */
+  --color-dark: #1e1b4b;         /* Azul marino oscuro */
+  --color-light: #ede9fe;        /* Lavanda suave */
+  --color-accent: #c4b5fd;       /* Lavanda medio */
+
+  /* Tipografía */
+  --font-family: 'Arial', sans-serif;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  --font-size-hero: 48px;
+
+  /* Espaciado */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-secondary);
+}
+
+/* Page Block */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container Utility */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: var(--font-size-hero); }
+h2 { font-size: var(--font-size-xxl); }
+h3 { font-size: var(--font-size-xl); }
+
+p { margin-bottom: var(--space-sm); }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover { opacity: 0.8; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --font-size-hero: 32px;
+    --font-size-xxl: 24px;
+    --font-size-xl: 20px;
+  }
+}

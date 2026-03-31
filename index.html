@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estructuras de Datos - CS2031 Team</title>
+    <link rel="stylesheet" href="styles/page.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/team.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <nav class="nav">
+          <div class="nav__container">
+            <div class="nav__brand">
+              <span class="nav__logo">CS2031</span>
+            </div>
+
+            <!-- Hidden checkbox for mobile menu toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav__checkbox" />
+            <label for="nav-toggle" class="nav__toggle">
+              <span class="nav__toggle-line nav__toggle-line--top"></span>
+              <span class="nav__toggle-line nav__toggle-line--middle"></span>
+              <span class="nav__toggle-line nav__toggle-line--bottom"></span>
+            </label>
+
+            <ul class="nav__list">
+              <li class="nav__item">
+                <!-- BUG #1: este enlace apunta a la seccion equivocada, deberia ser #hero -->
+                <a href="#inicio" class="nav__link">Inicio</a>
+              </li>
+              <li class="nav__item">
+                <!-- BUG #2: este enlace apunta a la seccion equivocada, deberia ser #about -->
+                <a href="#sobre" class="nav__link">Acerca de</a>
+              </li>
+              <li class="nav__item">
+                <!-- BUG #3: este enlace apunta a la seccion equivocada, deberia ser #team -->
+                <a href="#integrantes" class="nav__link">Equipo</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section id="hero" class="hero">
+          <div class="hero__container">
+            <div class="hero__content">
+              <h1 id="conflict__error" class="hero__title">Estructuras de Datos & Algoritmos</h1>
+              <p class="hero__subtitle">
+                Explorando el mundo de los algoritmos y la eficiencia computacional
+              </p>
+              <div class="hero__actions">
+                <a href="#about" class="hero__button hero__button--primary"
+                  >Aprender más</a
+                >
+                <a
+                  href="#team"
+                  class="hero__button hero__button--secondary"
+                  >Conocer al equipo</a
+                >
+              </div>
+            </div>
+            <div class="hero__visual">
+              <div class="hero__icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="about">
+          <div class="about__container">
+            <div class="about__header">
+              <h2 class="about__title">¿Qué son las Estructuras de Datos?</h2>
+              <p class="about__description">
+                La base de todo software eficiente y escalable
+              </p>
+            </div>
+
+            <div class="about__content">
+              <div class="about__card">
+                <div class="about__card-icon">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="about__card-title">Estructuras Lineales</h3>
+                <p class="about__card-text">
+                  Arrays, listas enlazadas, pilas y colas son las estructuras
+                  fundamentales que permiten organizar y acceder a datos de
+                  manera secuencial. Son la base para algoritmos más complejos.
+                </p>
+              </div>
+
+              <div class="about__card">
+                <div class="about__card-icon">
+                  <i class="fas fa-sitemap"></i>
+                </div>
+                <h3 class="about__card-title">Árboles y Grafos</h3>
+                <p class="about__card-text">
+                  Los árboles binarios, AVL y grafos representan relaciones
+                  jerárquicas y conexiones entre datos. Son esenciales para
+                  búsquedas eficientes y navegación en redes.
+                </p>
+              </div>
+
+              <div class="about__card">
+                <div class="about__card-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <h3 class="about__card-title">Complejidad Algorítmica</h3>
+                <p class="about__card-text">
+                  Entender Big O notation es crucial para escribir código
+                  eficiente. La diferencia entre O(n) y O(n²) puede significar
+                  segundos vs horas en datasets grandes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" class="team">
+          <div class="team__container">
+            <div class="team__header">
+              <h2 class="team__title">Nuestro Equipo</h2>
+              <p class="team__description">
+                Las personas detrás de este proyecto
+              </p>
+            </div>
+
+            <div class="team__grid">
+              <!-- INTEGRANTE 1: Reemplaza con tus datos -->
+              <div class="team-card">
+                <div class="team-card__image">
+                  <!-- Aquí tu foto de perfil (URL de GitHub u otra imagen) -->
+                  <img
+                    src="https://picsum.photos/300/300?random=1"
+                    alt="Nombre Integrante 1"
+                    class="team-card__photo"
+                  />
+                </div>
+                <div class="team-card__content">
+                  <!-- Aquí tu nombre completo -->
+                  <h3 class="team-card__name">Nombre Integrante 1</h3>
+                  <!-- Aquí tu especialidad o rol -->
+                  <p class="team-card__role">Tu Especialidad</p>
+                  <div class="team-card__social">
+                    <!-- Reemplaza # con tu URL de GitHub -->
+                    <a
+                      href="#"
+                      class="team-card__social-link team-card__social-link--github"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <!-- Reemplaza # con tu URL de LinkedIn -->
+                    <a
+                      href="#"
+                      class="team-card__social-link team-card__social-link--linkedin"
+                    >
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- INTEGRANTE 2: Reemplaza con tus datos -->
+              <div class="team-card">
+                <div class="team-card__image">
+                  <img
+                    src="https://picsum.photos/300/300?random=2"
+                    alt="Nombre Integrante 2"
+                    class="team-card__photo"
+                  />
+                </div>
+                <div class="team-card__content">
+                  <h3 class="team-card__name">Nombre Integrante 2</h3>
+                  <p class="team-card__role">Tu Especialidad</p>
+                  <div class="team-card__social">
+                    <a
+                      href="#"
+                      class="team-card__social-link team-card__social-link--github"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="team-card__social-link team-card__social-link--linkedin"
+                    >
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- INTEGRANTE 3: Reemplaza con tus datos -->
+              <div class="team-card">
+                <div class="team-card__image">
+                  <img
+                    src="https://picsum.photos/300/300?random=3"
+                    alt="Nombre Integrante 3"
+                    class="team-card__photo"
+                  />
+                </div>
+                <div class="team-card__content">
+                  <h3 class="team-card__name">Nombre Integrante 3</h3>
+                  <p class="team-card__role">Tu Especialidad</p>
+                  <div class="team-card__social">
+                    <a
+                      href="#"
+                      class="team-card__social-link team-card__social-link--github"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="team-card__social-link team-card__social-link--linkedin"
+                    >
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__content">
+            <div class="footer__brand">
+              <span class="footer__logo">CS2031</span>
+              <p class="footer__tagline">Aprendiendo Estructuras de Datos juntos</p>
+            </div>
+            <div class="footer__links">
+              <a href="https://github.com" class="footer__link">
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+              <a href="https://cs.utec.edu.pe" class="footer__link">
+                <i class="fas fa-university"></i>
+                UTEC
+              </a>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">
+              &copy; 2025 CS2031 Team. Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
